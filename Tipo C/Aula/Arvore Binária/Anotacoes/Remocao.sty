@@ -23,3 +23,24 @@ troca(t,u,v){
         }
     }
 }
+
+delete(t, z){
+    if(z.esquerda==NULL){
+        toca(t,z,z->direito);
+    }
+    else{
+        if(z.direta == NULL){
+            troca(t,z,z->esquerda);
+        }
+        else{
+            y = minimo(z.direto);
+            if(y.p!=z){
+                troca(t,y,y.direto)
+                y.direita.p = v;
+            }
+            troca(t,z,y);
+            y.esquerda = z.esquerda;
+            y.esquerda.p = y;
+        }
+    }
+}
