@@ -1,0 +1,25 @@
+Remover um nó z:
+
+1- Se z não tem filho (folha), basta remover.
+2- Se z tem apenas um filho, este assume lugar de z.
+3- Se z tiver dois filhos, encontramos o sucessor de z, y, que assume o lugar de z.
+sub arvore direita de z vira y.
+4- Se y é filho a direita de z, substituimos z por y.
+5- Caso contrário, subistituimos y por seu filho à direita e trocamos z por y.
+
+troca(t,u,v){
+    if(v.p==NULL){
+        t.raiz = v;
+    }
+    else{
+        if(v==v.p.esquerda){
+            v.p.esquerda = v;
+        }
+        else{
+            v.p.direito=v;
+            if(v!=NULL){
+                v.p=u.p;
+            }
+        }
+    }
+}
